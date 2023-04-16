@@ -12,7 +12,25 @@
 
 #include "libft.h"
 
-/* Renvoie 1 si le caractere est imprimable */
+/*
+** Nom de la fonction : ft_isprint
+** --------------------------------
+** Description :
+**  Cette fonction vérifie si le caractère passé en argument est un caractère
+**  imprimable. Les caractères imprimables sont ceux qui peuvent être affichés
+**  sur un écran ou une imprimante. Cette fonction retourne 1 pour les caractères
+**  imprimables et 0 pour les autres.
+**
+** Paramètres :
+**  - c : le caractère à tester.
+**
+** Retourne :
+**  - 1 si le caractère est un caractère imprimable.
+**  - 0 sinon.
+**
+** Remarques :
+**  - Les caractères imprimables ont des codes ASCII compris entre 32 et 126 inclusivement.
+*/
 
 int	ft_isprint(int c)
 {

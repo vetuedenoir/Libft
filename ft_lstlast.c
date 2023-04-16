@@ -12,7 +12,20 @@
 
 #include "libft.h"
 
-/* Renvoie un pointeur sur le dernier element */
+/*
+** Nom de la fonction : ft_lstlast
+** ------------------------------
+** Description :
+** Cette fonction prend en argument un pointeur sur le premier élément d'une
+** liste chaînée et renvoie un pointeur sur le dernier élément de cette liste.
+**
+** Paramètres :
+** - lst : le pointeur sur le premier élément de la liste chaînée.
+**
+** Retourne :
+** - un pointeur sur le dernier élément de la liste chaînée.
+** - NULL si la liste est vide (lst == NULL).
+*/
 
 t_list	*ft_lstlast(t_list *lst)
 {

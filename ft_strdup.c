@@ -12,7 +12,28 @@
 
 #include "libft.h"
 
-/* Creer une copie de la chaine envoyer en parametre */
+/*
+** Nom de la fonction : ft_strdup
+** ------------------------------
+** Description :
+**  Cette fonction alloue de la mémoire avec malloc() et copie la chaîne de
+**  caractères passée en argument dans cette nouvelle zone mémoire. La chaîne
+**  est copiée jusqu'au caractère nul inclus.
+**
+** Paramètres :
+**  - s : la chaîne de caractères à dupliquer.
+**
+** Retourne :
+**  - Un pointeur sur la nouvelle chaîne de caractères dupliquée, ou NULL en
+**    cas d'erreur lors de l'allocation de mémoire.
+**
+** Notes :
+**  - Il est de la responsabilité de l'appelant de libérer la mémoire allouée
+**    pour la nouvelle chaîne de caractères lorsqu'elle n'est plus utilisée.
+**  - La fonction ft_strlen() est utilisée pour déterminer la taille de la chaîne
+**    de caractères à dupliquer.
+**  - La nouvelle chaîne de caractères est toujours terminée par un caractère nul.
+*/ 
 
 char	*ft_strdup(const char *s)
 {

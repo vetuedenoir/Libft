@@ -12,7 +12,20 @@
 
 #include "libft.h"
 
-/* Renvoie 1 si le caractere est un chiffre */
+/*
+** Nom de la fonction : ft_isdigit
+** -------------------------------
+** Description :
+**  Cette fonction vérifie si le caractère passé en argument est un chiffre
+**  décimal. Les chiffres décimaux valides vont de 0 à 9 inclusivement.
+**
+** Paramètres :
+**  - c : le caractère à tester.
+**
+** Retourne :
+**  - 1 si le caractère est un chiffre décimal valide.
+**  - 0 sinon.
+*/
 
 int	ft_isdigit(int c)
 {

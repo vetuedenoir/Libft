@@ -12,7 +12,28 @@
 
 #include "libft.h"
 
-/* converti une chaine en int */
+/*
+** Fonction : ft_atoi
+** -------------------
+** Convertit une chaîne de caractères en un entier signé.
+** La fonction ignore les espaces, les tabulations, les sauts de ligne et
+** les retours chariots en début de chaîne.
+** Elle lit ensuite un signe optionnel (+ ou -)
+** suivi d'un ou plusieurs chiffres décimaux, 
+** convertit la chaîne en un entier et le retourne.
+**
+** Paramètres :
+**  - nptr : pointeur vers la chaîne de caractères à convertir en entier.
+**
+** Retourne :
+**  - la valeur entière convertie.
+**
+** Remarques :
+**  - si la chaîne ne contient pas de chiffres décimaux valides,
+** la fonction retourne 0.
+**  - si la chaîne dépasse la capacité d'un entier signé,
+** le comportement est indéfini.
+*/
 
 int	ft_atoi(const char *nptr)
 {
@@ -23,18 +44,18 @@ int	ft_atoi(const char *nptr)
 	i = 0;
 	signe = 1;
 	nbr = 0;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32) /* passe les espaces */
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
 		i++;
-	if (nptr[i] == '-' || nptr[i] == '+') /* verifie le signe */
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
 		if (nptr[i] == '-')
 			signe *= -1;
 		i++;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9') /* convertie la chaine de chiffre en int */
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		nbr = nbr * 10 + (nptr[i] - 48);
 		i++;
 	}
-	return (nbr * signe); /* revoie un int negatif ou positif */
+	return (nbr * signe);
 }

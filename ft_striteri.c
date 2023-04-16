@@ -12,7 +12,27 @@
 
 #include "stdlib.h"
 
-/* Applique la fonction f sur tout les caracteres dela chaine */
+/*
+** Nom de la fonction : ft_striteri
+** -------------------------------
+** Description :
+** Applique une fonction à chaque caractère de la chaîne de caractères passée
+** en paramètre, en précisant l'indice de chaque caractère.
+**
+** Paramètres :
+** - s : la chaîne de caractères à parcourir.
+** - f : le pointeur de fonction qui prend en paramètres un unsigned int et
+** un char* et ne retourne rien. Cette fonction sera appliquée à chaque
+** caractère de la chaîne, en précisant l'indice de chaque caractère.
+**
+** Retourne : rien.
+**
+** Notes :
+** - Cette fonction est similaire à la fonction ft_striter, mais ajoute un
+** paramètre qui permet de préciser l'indice de chaque caractère.
+** - Si la chaîne de caractères ou le pointeur de fonction est NULL, cette
+** fonction ne fait rien.
+*/
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {

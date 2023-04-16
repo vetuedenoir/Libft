@@ -12,7 +12,19 @@
 
 #include "libft.h"
 
-/* Renvoie le nombre d'element de la liste */
+/*
+** Nom de la fonction : ft_lstsize
+** ------------------------------
+** Description :
+** Cette fonction compte le nombre d'éléments dans une liste chaînée.
+**
+** Paramètres :
+** - lst : le pointeur vers le premier élément de la liste chaînée.
+**
+** Retourne :
+** Le nombre d'éléments dans la liste chaînée.
+** 0 si la liste est vide ou NULL.
+*/
 
 int	ft_lstsize(t_list *lst)
 {

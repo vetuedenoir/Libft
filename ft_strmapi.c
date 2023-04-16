@@ -12,7 +12,24 @@
 
 #include "libft.h"
 
-/* Creer une version modifier par f, de la chaine passer en parametre */
+/*
+** Nom de la fonction : ft_strmapi
+** -------------------------------
+** Description :
+** Cette fonction applique la fonction f sur chaque caractère de la chaîne s pour créer une nouvelle chaîne de caractères résultante. La chaîne résultante est allouée dynamiquement et doit être libérée par l'appelant.
+**
+** Paramètres :
+** - s : la chaîne de caractères à traiter.
+** - f : la fonction à appliquer à chaque caractère de la chaîne s.
+**
+** Retourne :
+** - La nouvelle chaîne de caractères résultante ou NULL si l'allocation dynamique de mémoire échoue.
+**
+** Notes :
+** - La fonction f doit avoir la signature suivante : char (*f)(unsigned int, char).
+** - La fonction crée une nouvelle chaîne de caractères allouée dynamiquement et doit être libérée par l'appelant.
+** - Si la chaîne s est NULL, la fonction retourne NULL.
+*/
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -24,12 +41,12 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	i = 0;
 	t = ft_strlen(s);
-	str = malloc(sizeof(char) * (t + 1));	// Malloc la meme taille que s	
+	str = malloc(sizeof(char) * (t + 1));
 	if (str == NULL)
 		return (NULL);
 	while (s[i])
 	{
-		str[i] = f(i, s[i]);		// Copie la modification dans la nouvelle chaine
+		str[i] = f(i, s[i]);
 		i++;
 	}
 	str[i] = '\0';

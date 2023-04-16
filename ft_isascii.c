@@ -12,7 +12,20 @@
 
 #include "libft.h"
 
-/* Renvoie 1 si le caractere fait partie de la table ascii standard */
+/*
+** Nom de la fonction : ft_isascii
+** --------------------------------
+** Description :
+**  Cette fonction vérifie si le caractère passé en argument est un code ASCII
+**  valide. Les codes ASCII valides vont de 0 à 127 inclusivement.
+**
+** Paramètres :
+**  - c : le caractère à tester.
+**
+** Retourne :
+**  - 1 si le caractère est un code ASCII valide.
+**  - 0 sinon.
+*/
 
 int	ft_isascii(int c)
 {

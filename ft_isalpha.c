@@ -12,7 +12,21 @@
 
 #include "libft.h"
 
-/* Renvoie 1 si le caractere est une lettre peut un porte la caste */
+/*
+** Nom de la fonction : ft_isalpha
+** -------------------------------
+** Description :
+**  Cette fonction vérifie si le caractère passé en argument est une lettre
+**  alphabétique. Les lettres alphabétiques incluent les caractères en
+**  minuscules (a à z) et en majuscules (A à Z).
+**
+** Paramètres :
+**  - c : le caractère à tester.
+**
+** Retourne :
+**  - 1 si le caractère est une lettre alphabétique.
+**  - 0 sinon.
+*/
 
 int	ft_isalpha(int c)
 {

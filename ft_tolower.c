@@ -12,7 +12,25 @@
 
 #include "libft.h"
 
-/* Passe le caractere c en minuscule si c est une majuscule */
+/*
+** Nom de la fonction : ft_tolower
+** ------------------------------
+** Description :
+** Cette fonction convertit le caractère c en minuscule s'il s'agit d'une lettre
+** majuscule. Si c ne correspond pas à une lettre majuscule, la fonction renvoie
+** simplement c inchangé.
+**
+** Paramètres :
+** - c : le caractère à convertir.
+**
+** Retourne :
+** - La valeur entière correspondant au caractère c en minuscule, ou c inchangé
+** s'il ne s'agit pas d'une lettre majuscule.
+**
+** Notes :
+** - Aucune vérification n'est effectuée sur le paramètre c. Il doit être
+** représentable sur un octet.
+*/
 
 int	ft_tolower(int c)
 {

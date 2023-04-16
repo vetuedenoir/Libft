@@ -12,7 +12,28 @@
 
 #include "libft.h"
 
-/* Compare les 2 zones de memoires jusqu'a n */
+/*
+** Nom de la fonction : ft_memcmp
+** ------------------------------
+** Description :
+** Cette fonction compare les n premiers octets de s1 et s2. Elle renvoie un
+** entier inférieur, égal ou supérieur à zéro si les n premiers octets de s1
+** sont respectivement inférieurs, égaux ou supérieurs aux n premiers octets
+** de s2.
+**
+** Paramètres :
+** - s1 : un pointeur vers le premier bloc de mémoire à comparer.
+** - s2 : un pointeur vers le deuxième bloc de mémoire à comparer.
+** - n : le nombre d'octets à comparer.
+**
+** Retourne :
+** - Un entier inférieur, égal ou supérieur à zéro si les n premiers octets
+** de s1 sont respectivement inférieurs, égaux ou supérieurs aux n premiers
+** octets de s2.
+**
+** Remarques :
+** - Cette fonction ne modifie pas les blocs de mémoire pointés par s1 et s2.
+*/
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

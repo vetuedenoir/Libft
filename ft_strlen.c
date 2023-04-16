@@ -12,7 +12,25 @@
 
 #include "libft.h"
 
-/* Calcue la taille de la chaine */
+/*
+** Nom de la fonction : ft_strlen
+** -----------------------------
+** Description :
+** Cette fonction calcule la longueur d'une chaîne de caractères, en parcourant
+** la chaîne jusqu'à rencontrer le caractère nul ('\0') qui marque la fin de
+** la chaîne.
+**
+** Paramètres :
+** - str : un pointeur vers la chaîne de caractères dont on veut calculer la
+** longueur.
+**
+** Retourne :
+** - La longueur de la chaîne de caractères passée en paramètre.
+**
+** Notes :
+** - Cette fonction ne compte pas le caractère nul ('\0') dans le calcul de la
+** longueur de la chaîne.
+*/
 
 size_t	ft_strlen(const char *str)
 {

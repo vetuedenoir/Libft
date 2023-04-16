@@ -12,7 +12,28 @@
 
 #include "libft.h"
 
-/* Suprime le contenue et libere la memoir de tout les elements de la chaine */
+/*
+** Nom de la fonction : ft_lstclear
+** -------------------------------
+** Description :
+** Cette fonction supprime tous les éléments de la liste passée en argument en utilisant
+** la fonction de suppression 'del' passée en argument pour libérer la mémoire allouée
+** aux données contenues dans chaque élément. Enfin, elle met à jour le pointeur de
+** début de liste sur NULL.
+**
+** Paramètres :
+** - lst : l'adresse du pointeur de début de liste.
+** - del : le pointeur de la fonction de suppression à utiliser pour chaque élément.
+**
+** Retourne : rien.
+**
+** Remarques :
+** - Si 'lst' est NULL, cette fonction ne fait rien.
+** - 'del' ne doit pas être NULL.
+** - Cette fonction libère la mémoire allouée pour chaque élément, ainsi que la
+** mémoire allouée pour le pointeur de l'élément.
+** - Après l'appel de cette fonction, le pointeur de début de liste est mis à NULL.
+*/
 
 void	ft_lstclear(t_list **lst, void (*del) (void *))
 {
@@ -22,8 +43,8 @@ void	ft_lstclear(t_list **lst, void (*del) (void *))
 		return ;
 	while (*lst)
 	{
-		tmp = (*lst)->next;		// Sauvegarde du prochain pointeur
-		ft_lstdelone(*lst, del);	// Suprime l'element
+		tmp = (*lst)->next;
+		ft_lstdelone(*lst, del);
 		*lst = tmp;
 	}
 }

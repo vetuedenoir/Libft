@@ -12,7 +12,27 @@
 
 #include "libft.h"
 
-/* Creer une nouvelle chaine qui comprend s1 et s2 a la suite */
+/*
+** Nom de la fonction : ft_strjoin
+** ------------------------------
+** Description :
+** Cette fonction alloue et retourne une nouvelle chaîne de caractères
+** résultant de la concaténation de s1 et s2. La nouvelle chaîne est
+** terminée par un caractère nul.
+**
+** Paramètres :
+** - s1 : la chaîne de caractères à placer en premier dans la concaténation.
+** - s2 : la chaîne de caractères à placer en deuxième dans la concaténation.
+**
+** Retourne :
+** - La nouvelle chaîne de caractères obtenue à partir de la concaténation
+** de s1 et s2, ou NULL si l'allocation de mémoire a échoué.
+**
+** Notes :
+** - Si s1 ou s2 est NULL, la fonction renvoie NULL.
+** - La mémoire allouée par cette fonction doit être libérée par l'appelant
+** à l'aide de la fonction free.
+*/
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -25,16 +45,16 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	i = 0;
 	p = 0;
-	t = ft_strlen(s1) + ft_strlen(s2);	// Aditionne la len des 2 chaines
+	t = ft_strlen(s1) + ft_strlen(s2);
 	str = malloc(sizeof(char) * (t + 1));
 	if (str == NULL)
 		return (NULL);
-	while (s1[i])				// Copie s1
+	while (s1[i])
 	{
 		str[i] = s1[i];
 		i++;
 	}
-	while (s2[p])				// Puis s2 a la suite
+	while (s2[p])
 	{
 		str[i + p] = s2[p];
 		p++;

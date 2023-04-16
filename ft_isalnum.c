@@ -12,7 +12,21 @@
 
 #include "libft.h"
 
-/* Renvoie un 1 si le caractere est alphanumerique */
+/*
+** Nom de la fonction : ft_isalnum
+** ------------------------------
+** Description :
+**  Cette fonction vérifie si le caractère passé en argument est un caractère
+**  alphanumérique. Les caractères alphanumériques incluent les chiffres
+**  (0 à 9) et les lettres (a à z, A à Z).
+**
+** Paramètres :
+**  - c : le caractère à tester.
+**
+** Retourne :
+**  - 1 si le caractère est alphanumérique.
+**  - 0 sinon.
+*/
 
 int	ft_isalnum(int c)
 {

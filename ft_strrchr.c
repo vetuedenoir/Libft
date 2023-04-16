@@ -12,7 +12,27 @@
 
 #include "libft.h"
 
-/* Renvoie un pointeur sur la derniers occurence de c dans s */
+/*
+** Nom de la fonction : ft_strrchr
+** -------------------------------
+** Description :
+** Cette fonction cherche la dernière occurrence du caractère c dans la chaîne
+** s. La recherche commence par la fin de la chaîne s et se poursuit vers le
+** début jusqu'à ce que le caractère c soit trouvé ou que la fin de la chaîne
+** s soit atteinte.
+**
+** Paramètres :
+** - s : la chaîne de caractères dans laquelle chercher.
+** - c : le caractère à chercher.
+**
+** Retourne :
+** - Un pointeur vers la dernière occurrence du caractère c dans la chaîne s,
+** ou NULL si le caractère n'est pas présent dans la chaîne.
+**
+** Notes :
+** - Le caractère de fin de chaîne ('\0') est considéré comme faisant partie
+** de la chaîne s.
+*/
 
 char	*ft_strrchr(const char *s, int c)
 {

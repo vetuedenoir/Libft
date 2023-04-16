@@ -12,7 +12,26 @@
 
 #include "libft.h"
 
-/* Ecrit une chaine dans le descripteur de fichier suivit d'un retour a la ligne */
+/*
+** Nom de la fonction : ft_putendl_fd
+** ----------------------------------
+** Description :
+** Cette fonction écrit la chaîne de caractères 's' suivie d'un caractère
+** de fin de ligne ('\n') dans le fichier correspondant au descripteur de
+** fichier 'fd'.
+**
+** Paramètres :
+** - s : la chaîne de caractères à écrire.
+** - fd : le descripteur de fichier dans lequel écrire.
+**
+** Retourne :
+** - rien.
+**
+** Notes :
+** - Si la chaîne de caractères 's' est NULL, rien n'est écrit.
+** - Cette fonction utilise la fonction ft_strlen pour déterminer la longueur
+** de la chaîne de caractères à écrire.
+*/
 
 void	ft_putendl_fd(char *s, int fd)
 {

@@ -13,8 +13,29 @@
 #include "libft.h"
 #include <stdio.h>
 
-/* Decoupe la chaine envoyer en parametre en plusieur sous chaine en foncton du
-   caractere separateur */
+/*
+** Nom de la fonction : ft_split
+** ----------------------------
+** Description :
+** Cette fonction alloue et retourne un tableau de chaînes de caractères
+** obtenu en séparant la chaîne de caractères s en fonction du caractère
+** c donné en paramètre. Chaque chaîne dans le tableau est une sous-chaîne
+** de s, séparée par le caractère c.
+**
+** Paramètres :
+** - s : la chaîne de caractères à séparer.
+** - c : le caractère à utiliser pour séparer s.
+**
+** Retourne :
+** - Un tableau de chaînes de caractères obtenu en séparant s en fonction de c,
+** ou NULL si l'allocation de mémoire a échoué.
+**
+** Notes :
+** - Si s est NULL, la fonction renvoie NULL.
+** - La mémoire allouée par cette fonction doit être libérée par l'appelant
+** à l'aide de la fonction free.
+** - Le dernier élément du tableau est un pointeur NULL pour indiquer sa fin.
+*/
 
 static int	lents(const char *str, char c)	// Calcule le nombre de sous chaine a creer
 {
@@ -32,6 +53,11 @@ static int	lents(const char *str, char c)	// Calcule le nombre de sous chaine a 
 	return (t);
 }
 
+/*
+** La fonction lents calcule le nombre de sous-chaînes de caractères présentes dans
+** la chaîne s, délimitées par le caractère c.
+*/
+
 static char	*cpy_tsx(const char *s, int index, char c)	// Copie chaque 'Mots' dans sa sous chaine
 {
 	int		i;
@@ -40,16 +66,16 @@ static char	*cpy_tsx(const char *s, int index, char c)	// Copie chaque 'Mots' da
 
 	i = index;
 	t = 0;
-	while (s[i] != c && s[i])				// Calcule la taille du mots
+	while (s[i] != c && s[i])
 	{
 		t++;
 		i++;
 	}
-	str = malloc(sizeof(char) * (t + 1));			// Malloc la sous chaine
+	str = malloc(sizeof(char) * (t + 1));
 	if (str == NULL)
 		return (NULL);
 	i = 0;
-	while (s[index] != c && s[index])			// Copie le mots dans la sous chaine
+	while (s[index] != c && s[index])
 	{
 		str[i] = s[index];
 		i++;
@@ -59,13 +85,26 @@ static char	*cpy_tsx(const char *s, int index, char c)	// Copie chaque 'Mots' da
 	return (str);
 }
 
-static void	*free_all(char **ts, int x)			// Fonction qui free le tableaux de chaine et ses sous chaine
+/*
+** La fonction cpy_tsx copie chaque mot dans sa sous-chaîne.
+** Elle prend en entrée la chaîne de caractères s,
+** l'index de début du mot dans s et le caractère délimitant c.
+*/
+
+static void	*free_all(char **ts, int x)
 {
-	while (x-- >= 0)					// si une erreur s'est produit
+	while (--x >= 0)
 		free(ts[x]);
 	free(ts);
 	return (NULL);
 }
+
+/*
+** La fonction free_all libère la mémoire allouée pour le tableau de chaînes
+** et pour toutes ses sous-chaînes. Elle prend en entrée le tableau de chaînes ts
+** et le nombre d'éléments à libérer x.
+** Elle est apeller en cas d'erreur.
+*/
 
 char	**ft_split(char const *s, char c)
 {
@@ -77,10 +116,10 @@ char	**ft_split(char const *s, char c)
 	x = 0;
 	if (!s)
 		return (NULL);
-	ts = malloc(sizeof(char *) * (lents(s, c) + 1));	// Malloc le tableau de chaine a la bonne taille
+	ts = malloc(sizeof(char *) * (lents(s, c) + 1));
 	if (ts == NULL)
 		return (NULL);
-	while (i < (int)ft_strlen(s))				// Creer et copie toutes les sous chaine temps que s existe
+	while (i < (int)ft_strlen(s))
 	{
 		if (s[i] != c && s[i])
 		{
@@ -92,6 +131,6 @@ char	**ft_split(char const *s, char c)
 		}
 		i++;
 	}
-	ts[x] = 0;						// La derniere chaine du tableau est NULL
+	ts[x] = 0;
 	return (ts);
 }
